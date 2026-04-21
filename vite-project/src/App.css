@@ -1,4 +1,4 @@
-.bg-image {
+.bgImage {
   position: absolute;
   top: 0;
   left: 0;
@@ -8,9 +8,8 @@
   z-index: -1;
   opacity: 0.3;
   border-color: white;
-  border-bottom: 3px;
+  border-bottom: 0px;
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
-  border-style: solid;
 }

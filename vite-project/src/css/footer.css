@@ -1,0 +1,33 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: inherit;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.instagramLink {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.instagramLink h3 {
+    margin: 0;
+}
+
+.instagramIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+}

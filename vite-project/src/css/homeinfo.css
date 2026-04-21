@@ -1,0 +1,10 @@
+.homeInfo {
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 50%;
+    text-align: left;
+    padding: 2rem;
+}
