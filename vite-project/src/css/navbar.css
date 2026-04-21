@@ -40,7 +40,7 @@
 }
 
 .navbarLinks a:hover {
-  transform: scale(1.05);
+  border-top: 1px solid;
 }
 
 .navbarLinks {
@@ -69,5 +69,5 @@
 }
 
 .navbarContact button:hover {
-  transform: scale(1.05);
+  border-top: 1px solid;
 }

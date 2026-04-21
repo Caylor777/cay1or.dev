@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../css/navbar.css';
 
 function Navbar({ onContactClick }: { onContactClick: () => void }) {
@@ -6,11 +7,11 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
     <div className="navbar">
       
       <div className="navbarTitle">
-        <a href="#home">cay1or.dev</a>
+        <Link to="/">cay1or.dev</Link>
       </div>
 
       <div className="navbarLinks">
-        <a href="#photography">Photography</a>
+        <Link to="/photography">Photography</Link>
         <a href="#work">Web Design</a>
         <a href="#services">Software</a>
       </div>
