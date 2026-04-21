@@ -1,6 +1,6 @@
 import '../css/navbar.css';
 
-function Navbar() {
+function Navbar({ onContactClick }: { onContactClick: () => void }) {
   return (
 
     <div className="navbar">
@@ -10,14 +10,13 @@ function Navbar() {
       </div>
 
       <div className="navbarLinks">
-        <a href="#about">About</a>
         <a href="#photography">Photography</a>
         <a href="#work">Web Design</a>
         <a href="#services">Software</a>
       </div>
 
       <div className="navbarContact">
-        <a href="#contact">Contact</a>
+        <button onClick={onContactClick}>Contact</button>
       </div>
 
     </div>

@@ -50,5 +50,24 @@
 
 .navbarContact {
   position: absolute;
-  right: 2rem;
+  right: 0rem;
+  margin: 0.5rem;
+  margin-top: 1rem;
+  padding: 0 0.5rem;
+}
+
+.navbarContact button {
+  padding: 0.5rem;
+  font-weight: 500;
+  border-top: 2px solid;
+  border-right: transparent;
+  border-left: transparent;
+  border-bottom: transparent;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.navbarContact button:hover {
+  transform: scale(1.05);
 }

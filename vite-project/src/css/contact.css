@@ -1,0 +1,62 @@
+.contactModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.contactModal {
+    background-color: #1a1a1a;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.contactModal h1 {
+    margin-top: 0;
+    color: white;
+}
+
+.contactModal p {
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.contactModal a {
+    color: #4a9eff;
+    text-decoration: none;
+}
+
+.contactModal a:hover {
+    text-decoration: underline;
+}
+
+.closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeButton:hover {
+    color: #4a9eff;
+}
