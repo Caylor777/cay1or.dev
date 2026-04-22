@@ -12,8 +12,8 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
 
       <div className="navbarLinks">
         <Link to="/photography">Photography</Link>
-        <a href="#work">Web Design</a>
-        <a href="#services">Software</a>
+        <a href="#web">Web Design</a>
+        <a href="#media">Media</a>
       </div>
 
       <div className="navbarContact">
