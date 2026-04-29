@@ -1,11 +1,33 @@
-/* Fixed container pushed to the background */
-.bg-scroll-container {
-  top: 0;
-  left: 0;
+.detail-page {
   width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow-x: hidden;
+}
+
+/* Top Hero Background Container */
+.bg-scroll-container {
+  position: relative;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
-  z-index: -1; 
+}
+
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.bg-scroll-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 /* Animate the track leftwards */
@@ -19,14 +41,34 @@
 
 .bg-scroll-image {
   height: 100vh;
-  width: auto;
-  object-fit: cover;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
 }
 
 @keyframes scroll-horizontal {
   0% { transform: translateX(0); }
   /* Moves exactly halfway (10 images), snapping back seamlessly */
   100% { transform: translateX(-50%); } 
+}
+
+/* Hero text centered over scrolling images */
+.detail-hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+  color: white;
+  width: 100%;
+}
+
+.detail-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 /* Put normal content above the background */

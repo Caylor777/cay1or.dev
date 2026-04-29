@@ -14,7 +14,6 @@ import bgImage10 from '../assets/detail/10.png';
 import instagramIcon from "../assets/instagram.svg";
 
 import Navbar from "../components/navbar";
-import HomeInfo from "../components/homeInfo";
 import Contact from "../components/contact";
 
 import '../App.css';
@@ -47,9 +46,11 @@ function Detail() {
     
     <div className="detail-page">
         
-        <Navbar onContactClick={() => setShowContactModal(true)} />
-        
       <div className="bg-scroll-container">
+        <div className="navbar-wrapper">
+          <Navbar onContactClick={() => setShowContactModal(true)} />
+        </div>
+
         <div className="bg-scroll-overlay"></div>
         <div className="bg-scroll-track">
           {/* First set of images */}
