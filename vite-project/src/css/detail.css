@@ -1,0 +1,94 @@
+/* Fixed container pushed to the background */
+.bg-scroll-container {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1; 
+}
+
+/* Animate the track leftwards */
+.bg-scroll-track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  /* 30s controls the speed, adjust as needed */
+  animation: scroll-horizontal 30s linear infinite; 
+}
+
+.bg-scroll-image {
+  height: 100vh;
+  width: auto;
+  object-fit: cover;
+}
+
+@keyframes scroll-horizontal {
+  0% { transform: translateX(0); }
+  /* Moves exactly halfway (10 images), snapping back seamlessly */
+  100% { transform: translateX(-50%); } 
+}
+
+/* Put normal content above the background */
+.content-overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Reviews Section --- */
+.reviews-section {
+  margin-top: auto; /* Pushes the reviews to the bottom of the screen */
+  padding: 3rem 0;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+.reviews-scroll-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.reviews-scroll-track {
+  display: flex;
+  width: max-content;
+  /* Animates in the opposite direction (rightward) */
+  animation: scroll-horizontal-reverse 35s linear infinite;
+}
+
+.review-card {
+  width: 350px;
+  margin: 0 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.review-card p {
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.review-card h4 {
+  text-align: right;
+  margin: 0;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+@keyframes scroll-horizontal-reverse {
+  /* Start at -50% and move to 0 to simulate moving backwards / to the right */
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
