@@ -64,7 +64,6 @@ function Detail() {
       </div>
 
       <div className="detail-content-wrapper">
-        <Navbar onContactClick={() => setShowContactModal(true)} />
 
         <div className="detail-hero">
           <h1 className="detail-hero-title">Your Vision, Captured.</h1>
@@ -97,6 +96,18 @@ function Detail() {
       {showContactModal && (
         <Contact onClose={() => setShowContactModal(false)} />
       )}
+
+      <div className="photographyFooter">
+        <p>2026 cay1or.dev</p>
+
+        <a href="https://www.instagram.com/cay1or/">
+        
+        <div className="instagramLink">
+          <h3>@cay1or</h3>
+          <img className="instagramIcon" src={instagramIcon} alt="Instagram Icon"/>
+        </div></a>
+
+      </div>
     </div>
   );
 }
