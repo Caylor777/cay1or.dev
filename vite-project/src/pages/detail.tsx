@@ -67,8 +67,8 @@ function Detail() {
       <div className="detail-content-wrapper">
 
         <div className="detail-hero">
-          <h1 className="detail-hero-title">Your Vision, Captured.</h1>
-          <p className="detail-hero-subtitle">A collection of moments, each telling a unique story through the lens.</p>
+          <h1 className="detail-hero-title">Temp Title</h1>
+          <p className="detail-hero-subtitle">Temp low text</p>
         </div>
         
         <div className="reviews-section">
