@@ -91,6 +91,9 @@ const pricingPackages = [
   }
 ];
 
+// Extract all unique features across all packages dynamically
+const allFeatures = Array.from(new Set(pricingPackages.flatMap(pkg => pkg.features)));
+
 function Detail() {
   const [showContactModal, setShowContactModal] = useState(false);
 
@@ -147,19 +150,44 @@ function Detail() {
 
         <div className="pricing-section">
           <h2 className="pricing-title">Pricing Packages</h2>
-          <div className="pricing-container">
-            {pricingPackages.map((pkg) => (
-              <div key={pkg.id} className="pricing-card">
-                <h3>{pkg.name}</h3>
-                <p className="price">{pkg.price}</p>
-                <ul className="features-list">
-                  {pkg.features.map((feature, idx) => (
-                    <li key={idx}>{feature}</li>
+          <div className="pricing-table-container">
+            <table className="pricing-table">
+              <thead>
+                <tr>
+                  <th className="feature-col">Features</th>
+                  {pricingPackages.map((pkg) => (
+                    <th key={pkg.id}>
+                      <div className="pkg-header">
+                        <h3>{pkg.name}</h3>
+                        <p className="price">{pkg.price}</p>
+                      </div>
+                    </th>
                   ))}
-                </ul>
-                <button className="quote-button" onClick={() => setShowContactModal(true)}>Get a Quote</button>
-              </div>
-            ))}
+                </tr>
+              </thead>
+              <tbody>
+                {allFeatures.map((feature, idx) => (
+                  <tr key={idx}>
+                    <td className="feature-name">{feature}</td>
+                    {pricingPackages.map((pkg) => (
+                      <td key={pkg.id} className="feature-check">
+                        {pkg.features.includes(feature) ? '✔️' : '❌'}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td></td>
+                  {pricingPackages.map((pkg) => (
+                    <td key={pkg.id}>
+                      <button className="quote-button" onClick={() => setShowContactModal(true)}>Get a Quote</button>
+                    </td>
+                  ))}
+                </tr>
+              </tfoot>
+            </table>
           </div>
         </div>
       </div>
