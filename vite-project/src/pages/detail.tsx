@@ -40,7 +40,7 @@ const pricingPackages = [
   {
     id: 1,
     name: "Full Detail Package",
-    price: "Starting at $145",
+    basePrice: 145,
     features: [
                 "Exterior wash", 
                 "Wheel & tire cleaning", 
@@ -57,7 +57,7 @@ const pricingPackages = [
   {
     id: 2,
     name: "Standard Package",
-    price: "Starting at $130",
+    basePrice: 130,
     features: ["Exterior wash", 
                 "Wheel & tire cleaning",
                 "Interior vacuum", 
@@ -71,7 +71,7 @@ const pricingPackages = [
   {
     id: 3,
     name: "Exterior Package",
-    price: "Starting at $95",
+    basePrice: 95,
     features: ["Exterior wash", 
                 "Wheel & tire cleaning",
                 "Exterior hand wax application"
@@ -80,7 +80,7 @@ const pricingPackages = [
   {
     id: 4,
     name: "Interior Package",
-    price: "Starting at $95",
+    basePrice: 95,
     features: [
                 "Interior vacuum", 
                 "All interior surface cleaning/wipe down", 
@@ -91,11 +91,27 @@ const pricingPackages = [
   }
 ];
 
+// Vehicle types and their price adjustments
+const vehicleTypes = [
+  { id: 'sedan', name: 'Sedan' },
+  { id: 'crossover', name: 'Crossover' },
+  { id: 'suv', name: 'SUV' },
+  { id: 'truck', name: 'Truck' },
+];
+
+const vehicleTypeSurcharges: { [key: string]: number } = {
+  sedan: 1,
+  crossover: 1.1,
+  suv: 1.2,
+  truck: 1.2,
+};
+
 // Extract all unique features across all packages dynamically
 const allFeatures = Array.from(new Set(pricingPackages.flatMap(pkg => pkg.features)));
 
 function Detail() {
   const [showContactModal, setShowContactModal] = useState(false);
+  const [vehicleType, setVehicleType] = useState('sedan');
 
   return (
     
@@ -150,6 +166,23 @@ function Detail() {
 
         <div className="pricing-section">
           <h2 className="pricing-title">Pricing Packages</h2>
+          <div className="vehicle-type-selector">
+            <h4 className="vehicle-type-title">Select Your Vehicle Type</h4>
+            <div className="vehicle-options">
+              {vehicleTypes.map(type => (
+                <label key={type.id} className="vehicle-option">
+                  <input
+                    type="radio"
+                    name="vehicleType"
+                    value={type.id}
+                    checked={vehicleType === type.id}
+                    onChange={(e) => setVehicleType(e.target.value)}
+                  />
+                  <span>{type.name}</span>
+                </label>
+              ))}
+            </div>
+          </div>
           <div className="pricing-table-container">
             <table className="pricing-table">
               <thead>
@@ -159,7 +192,7 @@ function Detail() {
                     <th key={pkg.id}>
                       <div className="pkg-header">
                         <h3>{pkg.name}</h3>
-                        <p className="price">{pkg.price}</p>
+                        <p className="price">Starting at ${Math.round((pkg.basePrice * vehicleTypeSurcharges[vehicleType]) / 5) * 5}</p>
                       </div>
                     </th>
                   ))}
@@ -198,14 +231,6 @@ function Detail() {
 
       <div className="photographyFooter">
         <p>2026 cay1or.dev</p>
-
-        <a href="https://www.instagram.com/cay1or/">
-        
-        <div className="instagramLink">
-          <h3>@cay1or</h3>
-          <img className="instagramIcon" src={instagramIcon} alt="Instagram Icon"/>
-        </div></a>
-
       </div>
     </div>
   );
