@@ -35,6 +35,62 @@ const reviews = [
   { id: 5, text: "A temporay review", author: "Jessica L." },
 ];
 
+// data for pricing packages
+const pricingPackages = [
+  {
+    id: 1,
+    name: "Full Detail Package",
+    price: "Starting at $145",
+    features: [
+                "Exterior wash", 
+                "Wheel & tire cleaning", 
+                "Exterior hand wax application", 
+                "Interior vacuum", 
+                "All interior surface cleaning/wipe down", 
+                "Interior protectant application",
+                "pet hair removal",
+                "stain removal",
+                "Window cleaning",
+                "etc."
+              ]
+  },
+  {
+    id: 2,
+    name: "Standard Package",
+    price: "Starting at $130",
+    features: ["Exterior wash", 
+                "Wheel & tire cleaning",
+                "Interior vacuum", 
+                "All interior surface cleaning/wipe down", 
+                "Interior protectant application",
+                "pet hair removal",
+                "stain removal",
+                "Window cleaning",
+              ]
+  },
+  {
+    id: 3,
+    name: "Exterior Package",
+    price: "Starting at $95",
+    features: ["Exterior wash", 
+                "Wheel & tire cleaning",
+                "Exterior hand wax application"
+              ]
+  },
+  {
+    id: 4,
+    name: "Interior Package",
+    price: "Starting at $95",
+    features: [
+                "Interior vacuum", 
+                "All interior surface cleaning/wipe down", 
+                "Interior protectant application",
+                "pet hair removal",
+                "stain removal"
+              ]
+  }
+];
+
 function Detail() {
   const [showContactModal, setShowContactModal] = useState(false);
 
@@ -86,6 +142,24 @@ function Detail() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        <div className="pricing-section">
+          <h2 className="pricing-title">Pricing Packages</h2>
+          <div className="pricing-container">
+            {pricingPackages.map((pkg) => (
+              <div key={pkg.id} className="pricing-card">
+                <h3>{pkg.name}</h3>
+                <p className="price">{pkg.price}</p>
+                <ul className="features-list">
+                  {pkg.features.map((feature, idx) => (
+                    <li key={idx}>{feature}</li>
+                  ))}
+                </ul>
+                <button className="quote-button" onClick={() => setShowContactModal(true)}>Get a Quote</button>
+              </div>
+            ))}
           </div>
         </div>
       </div>
