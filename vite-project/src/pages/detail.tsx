@@ -20,23 +20,19 @@ import '../App.css';
 import '../css/home.css';
 import '../css/detail.css';
 
-// Add your 10 image imports here. 
-// For now, we are repeating `bgImage` 10 times as a placeholder.
+// data for background images
 const bgImages = [
   bgImage1, bgImage2, bgImage3, bgImage4, bgImage5,
   bgImage6, bgImage7, bgImage8, bgImage9, bgImage10
 ];
 
-// Placeholder mock data for client reviews
+// data for client reviews
 const reviews = [
-  { id: 1, text: "An absolute professional! The photos are stunning.", author: "Sarah W." },
-  { id: 2, text: "Captured our special day perfectly. Highly recommend!", author: "James T." },
-  { id: 3, text: "Amazing attention to detail and so easy to work with.", author: "Emily R." },
-  { id: 4, text: "The best photography experience we've ever had.", author: "Michael B." },
-  { id: 5, text: "Creative, punctual, and delivered beyond expectations.", author: "Jessica L." },
-  { id: 6, text: "Truly an artist. We will cherish these photos forever.", author: "David C." },
-  { id: 7, text: "Made us feel so comfortable in front of the camera.", author: "Amanda K." },
-  { id: 8, text: "Fantastic quality and very quick turnaround time.", author: "Robert M." },
+  { id: 1, text: "A temporay review", author: "Sarah W." },
+  { id: 2, text: "A temporay review", author: "James T." },
+  { id: 3, text: "A temporay review", author: "Emily R." },
+  { id: 4, text: "A temporay review", author: "Michael B." },
+  { id: 5, text: "A temporay review", author: "Jessica L." },
 ];
 
 function Detail() {
@@ -67,8 +63,8 @@ function Detail() {
       <div className="detail-content-wrapper">
 
         <div className="detail-hero">
-          <h1 className="detail-hero-title">Temp Title</h1>
-          <p className="detail-hero-subtitle">Temp low text</p>
+          <h1 className="detail-hero-title">Mobile Car Detailing</h1>
+          <p className="detail-hero-subtitle">We bring the professional detail to you!</p>
         </div>
         
         <div className="reviews-section">
