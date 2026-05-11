@@ -11,7 +11,7 @@ import bgImage8 from '../assets/detail/8.png';
 import bgImage9 from '../assets/detail/9.png';
 import bgImage10 from '../assets/detail/10.png';
 
-import instagramIcon from "../assets/instagram.svg";
+import yelpIcon from "../assets/yelp.svg";
 
 import Navbar from "../components/navbar";
 import Contact from "../components/contact";
@@ -231,6 +231,12 @@ function Detail() {
 
       <div className="photographyFooter">
         <p>2026 cay1or.dev</p>
+
+        <a href="https://www.yelp.com/" target="_blank" rel="noopener noreferrer">
+          <div className="instagramLink">
+            <img className="instagramIcon" src={yelpIcon} alt="Yelp Icon" style={{ width: '5vw', height: '4vh' }}/>
+          </div>
+        </a>
       </div>
     </div>
   );
