@@ -14,7 +14,7 @@ import bgImage10 from '../assets/detail/10.png';
 import yelpIcon from "../assets/yelp.svg";
 
 import Navbar from "../components/navbar";
-import Contact from "../components/contact";
+import DetailContact from "../components/detailContact";
 
 import '../App.css';
 import '../css/home.css';
@@ -237,7 +237,7 @@ function Detail() {
       </div>
 
       {showContactModal && (
-        <Contact onClose={() => setShowContactModal(false)} />
+        <DetailContact onClose={() => setShowContactModal(false)} />
       )}
 
       <div className="photographyFooter">
