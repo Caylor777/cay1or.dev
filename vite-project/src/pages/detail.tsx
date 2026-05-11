@@ -223,6 +223,17 @@ function Detail() {
             </table>
           </div>
         </div>
+
+        <div className="accepted-payments-section" style={{ textAlign: 'center', padding: '4rem 2rem' }}>
+          <h2 className="payments-title">Accepted Payments</h2>
+          <p style={{ marginBottom: '1.5rem' }}>We make paying easy by accepting the following methods:</p>
+          <div className="payments-list" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', fontSize: '1.2rem', fontWeight: 'bold' }}>
+            <span>💵 Cash</span>
+            <span>💳 PayPal</span>
+            <span>📱 Venmo</span>
+            <span>💲 CashApp</span>
+          </div>
+        </div>
       </div>
 
       {showContactModal && (
