@@ -60,7 +60,7 @@ function Photography() {
                     <div className="filmContent">
                         <div className="filmInfo">
                             <h2>Pentax ME</h2>
-                            <p>55$ per 36 exposures developed and scanned, 45$ bring your own film</p>
+                            <p>65$ per 36 exposures developed and scanned, 55$ bring your own film</p>
                             <p>Contact me for more information about a shoot with this camera</p>
                         </div>
                     </div>

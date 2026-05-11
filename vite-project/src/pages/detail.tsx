@@ -165,7 +165,7 @@ function Detail() {
         </div>
 
         <div className="pricing-section">
-          <h2 className="pricing-title">Pricing Packages</h2>
+          <h2 className="pricing-title">Package Pricing</h2>
           <div className="vehicle-type-selector">
             <h4 className="vehicle-type-title">Select Your Vehicle Type</h4>
             <div className="vehicle-options">
