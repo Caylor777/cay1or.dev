@@ -28,11 +28,8 @@ const bgImages = [
 
 // data for client reviews
 const reviews = [
-  { id: 1, text: "A temporay review", author: "Sarah W." },
-  { id: 2, text: "A temporay review", author: "James T." },
-  { id: 3, text: "A temporay review", author: "Emily R." },
-  { id: 4, text: "A temporay review", author: "Michael B." },
-  { id: 5, text: "A temporay review", author: "Jessica L." },
+  { id: 1, text: "My car was extremely dirty and gross and they detailed it like I first received it from the dealership. it was very affordable and it is worth the money", author: "Maida O." },
+  { id: 2, text: "These two did a great job detailing the exterior of my car as shown in the photo below. Quality work and very professional with fair prices for the work that was done.", author: "Gianluca A."}
 ];
 
 // data for pricing packages
