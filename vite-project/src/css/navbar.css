@@ -87,7 +87,7 @@
   cursor: pointer;
   z-index: 101;
   position: absolute;
-  right: 0rem;
+  right: 0.5rem;
   margin: 0.5rem;
   padding: 0 0.5rem;
 }
