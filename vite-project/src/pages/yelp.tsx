@@ -1,21 +1,29 @@
-import { useEffect } from 'react';
-
+import { useEffect} from 'react';
 import yelpIcon from "../assets/yelp.svg";
+import "../css/yelp.css";
 
 export default function YelpRedirect() {
+  const yelpUrl = "https://www.yelp.com/biz/c-and-m-mobile-auto-detailing-jacksonville";
+
   useEffect(() => {
-    //window.location.replace("https://www.yelp.com/biz/c-and-m-mobile-auto-detailing-jacksonville");
+    window.location.replace(yelpUrl);
   }, []);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh', fontFamily: 'sans-serif' }}>
-      <img src={yelpIcon} alt="Yelp Logo" style={{ width: '150px', marginBottom: '20px' }} />
-      <p>Redirecting to Yelp...</p>
+    <div className="yelp-container">
+      <img src={yelpIcon} alt="Yelp Logo" className="yelp-logo" />
+      <div className="spinner"></div>
+      <h1 className="yelp-title">Taking you to Yelp...</h1>
+      <p className="yelp-subtitle">
+        We're redirecting you to C&M Mobile Auto Detailing's Yelp page
+        <br />
+        Check out our reviews and photos!
+      </p>
       <a 
-        href="https://www.yelp.com/biz/c-and-m-mobile-auto-detailing-jacksonville" 
-        style={{ marginTop: '20px', padding: '10px 20px', backgroundColor: '#303030', color: 'white', textDecoration: 'none', borderRadius: '5px', fontWeight: 'bold' }}
+        href={yelpUrl} 
+        className="yelp-button"
       >
-        Click here if not redirected
+        Click here to go now
       </a>
     </div>
   );
