@@ -9,6 +9,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -41,6 +42,7 @@
 
 .bg-scroll-image {
   height: 100vh;
+  height: 100dvh;
   width: 100vw;
   background-size: cover;
   background-position: center;

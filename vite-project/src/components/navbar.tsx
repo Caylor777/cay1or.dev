@@ -1,27 +1,48 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/navbar.css';
 
 function Navbar({ onContactClick }: { onContactClick: () => void }) {
-  return (
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+
+  const handleContactClick = () => {
+    onContactClick();
+    closeMenu();
+  };
+
+  return (
     <div className="navbar">
       
       <div className="navbarTitle">
-        <Link to="/">cay1or.dev</Link>
+        <Link to="/" onClick={closeMenu}>cay1or.dev</Link>
       </div>
 
-      <div className="navbarLinks">
-        <Link to="/photography">Photography</Link>
-        <a href="#media">Media</a>
-        <Link to="/detail">Detail</Link>
-      </div>
+      <button 
+        className={`hamburger ${isOpen ? 'open' : ''}`} 
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+      >
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
 
-      <div className="navbarContact">
-        <button onClick={onContactClick}>Contact</button>
+      <div className={`navbarMenu ${isOpen ? 'active' : ''}`}>
+        <div className="navbarLinks">
+          <Link to="/photography" onClick={closeMenu}>Photography</Link>
+          <a href="#media" onClick={closeMenu}>Media</a>
+          <Link to="/detail" onClick={closeMenu}>Detail</Link>
+        </div>
+
+        <div className="navbarContact">
+          <button onClick={handleContactClick}>Contact</button>
+        </div>
       </div>
 
     </div>
-
   );
 }
 
