@@ -238,13 +238,13 @@ function Detail() {
       )}
 
       <div className="photographyFooter">
-        <p>2026 cay1or.dev</p>
-
         <a href="https://www.yelp.com/biz/c-and-m-mobile-auto-detailing-jacksonville" target="_blank" rel="noopener noreferrer">
-          <div className="instagramLink">
-            <img className="instagramIcon" src={yelpIcon} alt="Yelp Icon" style={{ width: '5vw', height: '4vh' }}/>
+          <div className="yelpLink">
+            <img className="yelpIcon" src={yelpIcon} alt="Yelp Icon" />
           </div>
         </a>
+
+        <p>2026 cay1or.dev</p>
       </div>
     </div>
   );

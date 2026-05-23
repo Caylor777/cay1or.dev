@@ -322,3 +322,40 @@
   border-bottom: none;
   padding-top: 1.5rem;
 }
+
+/* Mobile Pricing Table Adjustments */
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 2rem 1rem;
+  }
+
+  .pricing-table-container {
+    padding: 0;
+    border-radius: 8px;
+  }
+
+  .pricing-table {
+    min-width: 500px;
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .feature-col,
+  .feature-name,
+  .pricing-table tfoot td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .feature-col {
+    z-index: 3;
+  }
+}
