@@ -59,3 +59,22 @@
     height: 1.3rem;
     transition: transform 0.3s ease;
 }
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 2rem 1.5rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .instagramLink {
+        position: relative;
+        padding: 0.625rem 1rem;
+        right: auto;
+    }
+}
