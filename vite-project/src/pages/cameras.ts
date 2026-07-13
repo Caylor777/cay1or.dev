@@ -2,6 +2,15 @@ import DJI from "../assets/avata360.png";
 import sony from "../assets/sonyA6100.png";
 import pentax from "../assets/pentaxME.png";
 
+import SonyA6100_1 from "../assets/cameraGallery/sonyA6100_1.jpg";
+import SonyA6100_2 from "../assets/cameraGallery/sonyA6100_1.jpg";
+import SonyA6100_3 from "../assets/cameraGallery/sonyA6100_1.jpg";
+import SonyA6100_4 from "../assets/cameraGallery/sonyA6100_1.jpg";
+import SonyA6100_5 from "../assets/cameraGallery/sonyA6100_1.jpg";
+import SonyA6100_6 from "../assets/cameraGallery/sonyA6100_1.jpg";
+import SonyA6100_7 from "../assets/cameraGallery/sonyA6100_1.jpg";
+import SonyA6100_8 from "../assets/cameraGallery/sonyA6100_1.jpg";
+
 // Import gallery images here if you have them
 
 export interface CameraData {
@@ -42,7 +51,7 @@ export const camerasData: CameraData[] = [
     modalInfo: {
       price: 'Contact for pricing.',
       details: 'Ideal for portraits, events, and product photography. High-resolution images with excellent low-light performance and fast autofocus.',
-      gallery: [], // Add image URLs here
+      gallery: [SonyA6100_1, SonyA6100_2, SonyA6100_3, SonyA6100_4, SonyA6100_5, SonyA6100_6, SonyA6100_7, SonyA6100_8], // Add image URLs here
     }
   },
   {
