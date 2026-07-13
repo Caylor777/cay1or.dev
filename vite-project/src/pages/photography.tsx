@@ -1,17 +1,17 @@
 import { useState } from 'react';
 
 import Navbar from "../components/navbar";
-import Contact from "../components/contact";
-
-import DJI from "../assets/avata360.png"
-import sony from "../assets/sonyA6100.png"
-import pentax from "../assets/pentaxME.png"
+import CameraDetailModal from '../components/cameraDetailModal';
+import Contact from "../components/contact"; // This file seems to be missing from the context, but I'll assume it's correct.
+import { camerasData } from './cameras';
+import type { CameraData } from './cameras';
 import instagramIcon from "../assets/instagram.svg";
 
 import '../css/photography.css';
 
 function Photography() {
   const [showContactModal, setShowContactModal] = useState(false);
+  const [selectedCamera, setSelectedCamera] = useState<CameraData | null>(null);
 
   return (
     <div>
@@ -19,53 +19,34 @@ function Photography() {
         {showContactModal && (
         <Contact onClose={() => setShowContactModal(false)} />
         )}
+        {selectedCamera && (
+          <CameraDetailModal 
+            camera={selectedCamera} 
+            onClose={() => setSelectedCamera(null)}
+            onContactClick={() => {
+              setSelectedCamera(null); // Close the detail modal
+              setShowContactModal(true); // Open the contact modal
+            }}
+          />
+        )}
         <h1 className="photographyTitle">Photography</h1>
         <div className="cameras">
-            <div className="aerial">
-                <h1 className="aerialTitle">Aerial</h1>
-                <div className="aerialContainer">
-                    <div className="aerialImage">
-                        <img src={DJI} alt="DJI mini 2" />
-                    </div>
-                    <div className="aerialContent">
-                        <div className="aerialInfo">
-                            <h2>DJI Avata 360</h2>
-                            <p>A advanced drone that captures stunning 8K video and 120-megapixel aerial photos in a full 360-degree view</p>
-                        </div>
-                    </div>
+          {camerasData.map((camera) => (
+            <div key={camera.id} className={camera.category.toLowerCase()} onClick={() => setSelectedCamera(camera)}>
+              <h1 className={`${camera.category.toLowerCase()}Title`}>{camera.category}</h1>
+              <div className={`${camera.category.toLowerCase()}Container`}>
+                <div className={`${camera.category.toLowerCase()}Image`}>
+                  <img src={camera.image} alt={camera.alt} />
                 </div>
-            </div>
-
-            <div className="digital">
-                <h1 className="digitalTitle">Digital</h1>
-                <div className="digitalContainer">
-                    <div className="digitalImage">
-                        <img src={sony} alt="Sony A6100" />
-                    </div>
-                    <div className="digitalContent">
-                        <div className="digitalInfo">
-                            <h2>Sony A6100</h2>
-                            <p>A advanced mirrorless camera known for capturing ultra-sharp details and beautiful, true-to-life colors.</p>
-                        </div>
-                    </div>
+                <div className={`${camera.category.toLowerCase()}Content`}>
+                  <div className={`${camera.category.toLowerCase()}Info`}>
+                    <h2>{camera.name}</h2>
+                    <p>{camera.description}</p>
+                  </div>
                 </div>
+              </div>
             </div>
-
-            <div className="film">
-                <h1 className="filmTitle">Film</h1>
-                <div className="filmContainer">
-                    <div className="filmImage">
-                        <img src={pentax} alt="Pentax ME" />
-                    </div>
-                    <div className="filmContent">
-                        <div className="filmInfo">
-                            <h2>Pentax ME</h2>
-                            <p>65$ per 36 exposures developed and scanned, 55$ bring your own film</p>
-                            <p>Contact me for more information about a shoot with this camera</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          ))}
         </div>
 
         <div className="photographyFooter">
