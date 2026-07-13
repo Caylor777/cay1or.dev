@@ -30,7 +30,7 @@ function Photography() {
                     <div className="aerialContent">
                         <div className="aerialInfo">
                             <h2>DJI Avata 360</h2>
-                            <p>Contact me for more information about a shoot with this drone</p>
+                            <p>A advanced drone that captures stunning 8K video and 120-megapixel aerial photos in a full 360-degree view</p>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ function Photography() {
                     <div className="digitalContent">
                         <div className="digitalInfo">
                             <h2>Sony A6100</h2>
-                            <p>Contact me for more information about a shoot with this camera</p>
+                            <p>A advanced mirrorless camera known for capturing ultra-sharp details and beautiful, true-to-life colors.</p>
                         </div>
                     </div>
                 </div>
