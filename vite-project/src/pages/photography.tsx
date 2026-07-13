@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Navbar from "../components/navbar";
 import Contact from "../components/contact";
 
-import DJI from "../assets/DJImini2.png"
+import DJI from "../assets/avata360.png"
 import sony from "../assets/sonyA6100.png"
 import pentax from "../assets/pentaxME.png"
 import instagramIcon from "../assets/instagram.svg";
@@ -29,7 +29,7 @@ function Photography() {
                     </div>
                     <div className="aerialContent">
                         <div className="aerialInfo">
-                            <h2>DJI mini 2</h2>
+                            <h2>DJI Avata 360</h2>
                             <p>Contact me for more information about a shoot with this drone</p>
                         </div>
                     </div>
