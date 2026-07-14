@@ -2,14 +2,14 @@ import DJI from "../assets/avata360.png";
 import sony from "../assets/sonyA6100.png";
 import pentax from "../assets/pentaxME.png";
 
-import SonyA6100_1 from "../assets/cameraGallery/sonyA6100_1.jpg";
-import SonyA6100_2 from "../assets/cameraGallery/sonyA6100_1.jpg";
-import SonyA6100_3 from "../assets/cameraGallery/sonyA6100_1.jpg";
-import SonyA6100_4 from "../assets/cameraGallery/sonyA6100_1.jpg";
-import SonyA6100_5 from "../assets/cameraGallery/sonyA6100_1.jpg";
-import SonyA6100_6 from "../assets/cameraGallery/sonyA6100_1.jpg";
-import SonyA6100_7 from "../assets/cameraGallery/sonyA6100_1.jpg";
-import SonyA6100_8 from "../assets/cameraGallery/sonyA6100_1.jpg";
+import SonyA6100_1 from "../assets/cameraGallery/SonyA6100_1.jpg";
+import SonyA6100_2 from "../assets/cameraGallery/SonyA6100_2.jpg";
+import SonyA6100_3 from "../assets/cameraGallery/SonyA6100_3.jpg";
+import SonyA6100_4 from "../assets/cameraGallery/SonyA6100_4.jpg";
+import SonyA6100_5 from "../assets/cameraGallery/SonyA6100_5.jpg";
+import SonyA6100_6 from "../assets/cameraGallery/SonyA6100_6.jpg";
+import SonyA6100_7 from "../assets/cameraGallery/SonyA6100_7.jpg";
+import SonyA6100_8 from "../assets/cameraGallery/SonyA6100_8.jpg";
 
 // Import gallery images here if you have them
 

@@ -17,10 +17,12 @@
   color: white;
   padding: 2rem;
   border-radius: 12px;
-  width: 90%;
+  width: min(90vw, 800px);
   max-width: 800px;
   max-height: 90vh;
+  overflow-x: hidden;
   overflow-y: auto;
+  box-sizing: border-box;
   position: relative;
   border: 1px solid #333;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -72,8 +74,13 @@
 
 .modalContent {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 2rem;
+}
+
+.modalDetails,
+.modalGallery {
+  min-width: 0;
 }
 
 .modalDetails h3, .modalGallery h3 {
@@ -117,6 +124,88 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: min(100%, 320px);
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.galleryContainer {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #222;
+}
+
+.gallerySlider {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.gallerySlide {
+  min-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.galleryArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.2s;
+}
+
+.galleryArrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.galleryArrow.left {
+  left: 10px;
+  border-radius: 5px 0 0 5px;
+}
+
+.galleryArrow.right {
+  right: 10px;
+  border-radius: 0 5px 5px 0;
+}
+
+.thumbnailContainer {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  width: 44px;
+  height: 30px;
+  object-fit: contain;
+  background-color: #111;
+  padding: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.thumbnail.active {
+  border-color: #4da6ff;
 }
 
 @media (max-width: 768px) {

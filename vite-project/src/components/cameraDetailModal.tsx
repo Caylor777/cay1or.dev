@@ -54,6 +54,7 @@ const CameraDetailModal: React.FC<CameraDetailModalProps> = ({ camera, onClose, 
           <div className="modalDetails">
             <h3>Details</h3>
             <p>{camera.modalInfo.details}</p>
+            <br />
             <h3>Pricing</h3>
             <p>{camera.modalInfo.price}</p>
             <button className="contactButton" onClick={onContactClick}>Contact for a Shoot</button>
