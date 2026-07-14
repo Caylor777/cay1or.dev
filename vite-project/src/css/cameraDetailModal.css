@@ -171,13 +171,14 @@
 }
 
 .galleryArrow.left {
-  left: 10px;
-  border-radius: 5px 0 0 5px;
+  left: -15px;
+  background: transparent
 }
 
 .galleryArrow.right {
-  right: 10px;
-  border-radius: 0 5px 5px 0;
+  right: -15px;
+  background: transparent
+
 }
 
 .thumbnailContainer {

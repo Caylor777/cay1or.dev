@@ -11,6 +11,14 @@ import SonyA6100_6 from "../assets/cameraGallery/SonyA6100_6.jpg";
 import SonyA6100_7 from "../assets/cameraGallery/SonyA6100_7.jpg";
 import SonyA6100_8 from "../assets/cameraGallery/SonyA6100_8.jpg";
 
+import PentaxME_1 from "../assets/cameraGallery/PentaxME_1.jpg";
+import PentaxME_2 from "../assets/cameraGallery/PentaxME_2.jpg";
+import PentaxME_3 from "../assets/cameraGallery/PentaxME_3.jpg";
+import PentaxME_4 from "../assets/cameraGallery/PentaxME_4.jpg";
+import PentaxME_5 from "../assets/cameraGallery/PentaxME_5.jpg";
+import PentaxME_6 from "../assets/cameraGallery/PentaxME_6.jpg";
+
+
 // Import gallery images here if you have them
 
 export interface CameraData {
@@ -64,7 +72,7 @@ export const camerasData: CameraData[] = [
     modalInfo: {
       price: '$65 per 36 exposures (developed and scanned). $55 if you bring your own film.',
       details: 'Experience the unique aesthetic of 35mm film. Perfect for artistic portraits and lifestyle shoots with a vintage feel.',
-      gallery: [], // Add image URLs here
+      gallery: [PentaxME_1, PentaxME_2, PentaxME_3, PentaxME_4, PentaxME_5, PentaxME_6], // Add image URLs here
     }
   }
 ];
