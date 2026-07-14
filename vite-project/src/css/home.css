@@ -42,13 +42,14 @@
 }
 
 .footer a:hover .instagramLink {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: var(--accent-bg);
+    border-color: var(--accent-border);
+    color: var(--footer);
 }
 
 .instagramLink h3 {
     margin: 0;
-    color: white;
+    color: var(--footer);
     font-weight: 500;
     font-size: 0.95rem;
     letter-spacing: 0.02em;
