@@ -22,8 +22,8 @@
 
 @media (prefers-color-scheme: light) {
   :root{
-    --text: rgb(77, 77, 77);
-    --text-h: rgb(30, 30, 30);
+    --text: rgb(75, 75, 75);
+    --text-h: rgb(35, 35, 35);
     --footer: rgb(125, 125, 125);
     --bg: rgb(200, 200, 200);
     --border: #e5e4e7;
