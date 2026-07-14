@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/cameraDetailModal.css';
 import type { CameraData } from '../pages/cameras';
 
@@ -10,9 +10,31 @@ interface CameraDetailModalProps {
 }
 
 const CameraDetailModal: React.FC<CameraDetailModalProps> = ({ camera, onClose, onContactClick }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const { gallery } = camera.modalInfo;
+
+  // Reset index when camera changes
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [camera]);
+
   // Stop propagation to prevent closing the modal when clicking inside it
   const handleModalContentClick = (e: React.MouseEvent) => {
     e.stopPropagation();
+  };
+
+  const goToPrevious = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? gallery.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const isLastSlide = currentIndex === gallery.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
   };
 
   return (
@@ -39,8 +61,26 @@ const CameraDetailModal: React.FC<CameraDetailModalProps> = ({ camera, onClose, 
           <div className="modalGallery">
             <h3>Gallery</h3>
             <div className="galleryImages">
-              {/* You can map through your gallery images here */}
-              <p>Gallery images will be displayed here.</p>
+              {gallery.length > 0 ? (
+                <div className="galleryContainer">
+                  <div className="gallerySlider" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                    {gallery.map((image, index) => (
+                      <img key={index} src={image} alt={`${camera.name} gallery image ${index + 1}`} className="gallerySlide" />
+                    ))}
+                  </div>
+                  {gallery.length > 1 && (
+                    <>
+                      <button className="galleryArrow left" onClick={goToPrevious}>&#10094;</button>
+                      <button className="galleryArrow right" onClick={goToNext}>&#10095;</button>
+                    </>
+                  )}
+                  <div className="thumbnailContainer">
+                    {gallery.map((image, index) => (
+                      <img key={`thumb-${index}`} src={image} alt={`thumbnail ${index + 1}`} className={`thumbnail ${index === currentIndex ? 'active' : ''}`} onClick={() => setCurrentIndex(index)} />
+                    ))}
+                  </div>
+                </div>
+              ) : (<p>No gallery images available.</p>)}
             </div>
           </div>
         </div>
