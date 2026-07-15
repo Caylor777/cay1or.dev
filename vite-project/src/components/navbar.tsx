@@ -33,8 +33,6 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
       <div className={`navbarMenu ${isOpen ? 'active' : ''}`}>
         <div className="navbarLinks">
           <Link to="/photography" onClick={closeMenu}>Photography</Link>
-          <a href="#media" onClick={closeMenu}>Media</a>
-          <Link to="/detail" onClick={closeMenu}>Detail</Link>
         </div>
 
         <div className="navbarContact">
