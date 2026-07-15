@@ -11,12 +11,12 @@ import SonyA6100_6 from "../assets/cameraGallery/SonyA6100_6.jpg";
 import SonyA6100_7 from "../assets/cameraGallery/SonyA6100_7.jpg";
 import SonyA6100_8 from "../assets/cameraGallery/SonyA6100_8.jpg";
 
-import PentaxME_1 from "../assets/cameraGallery/pentaxME_1.jpg";
+import PentaxME_1 from "../assets/cameraGallery/PentaxME_1.jpg";
 import PentaxME_2 from "../assets/cameraGallery/pentaxME_2.jpg";
 import PentaxME_3 from "../assets/cameraGallery/pentaxME_3.jpg";
 import PentaxME_4 from "../assets/cameraGallery/pentaxME_4.jpg";
 import PentaxME_5 from "../assets/cameraGallery/pentaxME_5.jpg";
-import PentaxME_6 from "../assets/cameraGallery/pentaxME_6.jpg";
+import PentaxME_6 from "../assets/cameraGallery/PentaxME_6.jpg";
 
 
 // Import gallery images here if you have them
